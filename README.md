@@ -104,7 +104,7 @@ Start the backend server and the frontend application by following the instructi
 
 Open your web browser and navigate to http://localhost:3000 to access the eSchool application.
 
- ##Usage
+ ## Usage
 
 1. **Login:**
 
@@ -120,8 +120,8 @@ We welcome your feedback! If you encounter any issues or have suggestions, pleas
 Documentation
 For detailed documentation, including API documentation and system architecture, refer to the Documentation directory.
 
-##Contributing
+## Contributing
 We welcome contributions from the community. If you would like to contribute to the eSchool project, please follow our Contribution Guidelines.
 
-##License
+## License
 This project is licensed under the MIT License.
