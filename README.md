@@ -79,3 +79,49 @@ eSchool is an advanced educational management system designed to streamline scho
   - GitHub Actions (Continuous Integration)
   - Docker (Containerization)
   - Kubernetes (Container Orchestration)
+ 
+## Getting Started
+
+To get started with the eSchool project, follow these steps:
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/eSchool.git
+   cd eSchool
+
+2. **Install Dependencies:**
+
+Follow the instructions in the backend and frontend directories for installing backend and frontend dependencies, respectively.
+
+3. **Database Setup:**
+
+Set up a PostgreSQL database and update the database configurations in the backend.
+Run the Application:
+
+Start the backend server and the frontend application by following the instructions in the respective directories.
+
+4. **Access the Application:**
+
+Open your web browser and navigate to http://localhost:3000 to access the eSchool application.
+
+ ##Usage
+
+1. **Login:**
+
+Use the provided credentials to log in based on your role (teacher, student, parent, administrator).
+
+2. **Explore Features:**
+
+Explore the various features, such as student information management, attendance tracking, and grade management.
+
+3. **Provide Feedback:**
+
+We welcome your feedback! If you encounter any issues or have suggestions, please create an issue.
+Documentation
+For detailed documentation, including API documentation and system architecture, refer to the Documentation directory.
+
+##Contributing
+We welcome contributions from the community. If you would like to contribute to the eSchool project, please follow our Contribution Guidelines.
+
+##License
+This project is licensed under the MIT License.
