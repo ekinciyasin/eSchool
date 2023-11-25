@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.student;
+package com.ekinci.eSchool.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
