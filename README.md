@@ -86,7 +86,7 @@ To get started with the eSchool project, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/eSchool.git
+   git clone https://github.com/ekinciyasin/eSchool.git
    cd eSchool
 
 2. **Install Dependencies:**
