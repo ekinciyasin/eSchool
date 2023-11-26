@@ -2,6 +2,7 @@ package com.ekinci.eSchool.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -41,5 +42,7 @@ public class Student {
     private String address;
 
 
-
+    public String getFullName() {
+        return this.firstName +" "+ this.lastName;
+    }
 }
