@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
     @Query("SELECT s FROM Student s WHERE " +
-            "LOWER(s.firstName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(s.lastName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(s.user.firstName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(s.user.lastName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
             "LOWER(s.email) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
             "LOWER(s.contactNumber) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
             "LOWER(s.address) LIKE LOWER(CONCAT('%', :keyword, '%'))")

@@ -19,11 +19,10 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name", nullable = false)
-    private String firstName;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @Column(name = "last_name", nullable = false)
-    private String lastName;
 
     @Column(name = "date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
@@ -43,6 +42,6 @@ public class Student {
 
 
     public String getFullName() {
-        return this.firstName +" "+ this.lastName;
+        return this.user.getFirstName() +" "+ this.user.getLastName();
     }
 }

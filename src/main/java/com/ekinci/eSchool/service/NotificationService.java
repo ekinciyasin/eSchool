@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class NotificationService {
 
-    @Autowired
+
     private JavaMailSender javaMailSender;
 
     @Autowired
@@ -23,6 +23,7 @@ public class NotificationService {
 
     @Autowired
     private StudentService studentService;
+
 
     public List<Notification> getNotificationsByStudentId(Long studentId) {
         return notificationRepository.findByStudentIdOrderByTimestampDesc(studentId);
@@ -50,7 +51,7 @@ public class NotificationService {
             mailMessage.setSubject("New Grade Notification");
             mailMessage.setText(message);
 
-            javaMailSender.send(mailMessage);
+//            javaMailSender.send(mailMessage);
 
             System.out.println("Email notification sent successfully.");
         } catch (MailException e) {
