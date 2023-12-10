@@ -2,12 +2,14 @@ package com.ekinci.eSchool.repository;
 
 import com.ekinci.eSchool.model.Student;
 import com.ekinci.eSchool.model.User;
+import io.micrometer.observation.ObservationTextPublisher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
@@ -18,4 +20,6 @@ public interface UserRepository extends JpaRepository<User,Long> {
 //            "LOWER(s.contactNumber) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
 //            "LOWER(s.address) LIKE LOWER(CONCAT('%', :keyword, '%'))")
 //    List<Student> searchStudents(@Param("keyword") String keyword);
+
+    Optional<User> findByUsername(String username);
 }
