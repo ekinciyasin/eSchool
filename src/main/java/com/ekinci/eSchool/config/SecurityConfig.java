@@ -27,7 +27,7 @@ public class SecurityConfig{
                     authz.requestMatchers("/api/1.0/teachers/**").hasAnyRole(Role.ROLE_ADMIN.getValue(), Role.ROLE_TEACHER.getValue());
                     authz.anyRequest().permitAll();})
 
-                .formLogin(AbstractHttpConfigurer::disable)
+                .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();

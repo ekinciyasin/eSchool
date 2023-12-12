@@ -2,20 +2,26 @@ package com.ekinci.eSchool.service;
 
 import com.ekinci.eSchool.model.Student;
 import com.ekinci.eSchool.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class StudentService {
 
-    @Autowired
-    public StudentRepository studentRepository;
+    private StudentRepository studentRepository;
+    private BCryptPasswordEncoder passwordEncoder;
+
+    public StudentService(StudentRepository studentRepository, BCryptPasswordEncoder passwordEncoder) {
+        this.studentRepository = studentRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
 
     public Student createStudent(Student student) {
+        String encodedPassword = passwordEncoder.encode(student.getUser().getPassword());
+        student.getUser().setPassword(encodedPassword);
         Student savedStudent = studentRepository.save(student);
         return savedStudent;
     }
@@ -44,5 +50,9 @@ public class StudentService {
 
 
         return studentRepository.save(existingStudent);
+    }
+
+    public List<Student> getStudents() {
+        return studentRepository.findAll();
     }
 }

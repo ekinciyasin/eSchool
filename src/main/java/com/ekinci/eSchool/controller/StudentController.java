@@ -2,8 +2,8 @@ package com.ekinci.eSchool.controller;
 
 import com.ekinci.eSchool.model.Student;
 import com.ekinci.eSchool.service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,13 +12,24 @@ import java.util.List;
 @RequestMapping("/api/1.0/students")
 public class StudentController {
 
-    @Autowired
+
     private StudentService studentService;
+
+    public StudentController(StudentService studentService, BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.studentService = studentService;
+    }
 
     @PostMapping
     public ResponseEntity<Student> createStudent(@RequestBody Student student){
+
         Student createdStudent = studentService.createStudent(student);
        return ResponseEntity.ok(createdStudent);
+    }
+    @GetMapping
+    public ResponseEntity<List<Student>> getStudents(){
+
+    List<Student> students = studentService.getStudents();
+       return ResponseEntity.ok().body(students);
     }
 
     @GetMapping("/search")
