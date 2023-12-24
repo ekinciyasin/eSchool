@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.model.dto;
+package com.ekinci.eSchool.dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

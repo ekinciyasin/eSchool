@@ -1,8 +1,7 @@
 package com.ekinci.eSchool.controller;
 
-import com.ekinci.eSchool.model.Student;
+import com.ekinci.eSchool.dto.TeacherInfoDTO;
 import com.ekinci.eSchool.model.Teacher;
-import com.ekinci.eSchool.service.StudentService;
 import com.ekinci.eSchool.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +28,17 @@ public class TeacherController {
         return ResponseEntity.ok(teacher);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<Teacher>> searchStudents(@RequestParam("keyword") String keyword){
+        List<Teacher> foundTeachers = teacherService.getTeachersByKeyword(keyword);
+        return ResponseEntity.ok(foundTeachers);
+    }
+
+    @GetMapping("/search_info")
+    public ResponseEntity<List<TeacherInfoDTO>> searchStudentsInfo(@RequestParam("keyword") String keyword){
+        List<TeacherInfoDTO> foundTeachers = teacherService.getTeachersByKeyword2(keyword);
+        return ResponseEntity.ok(foundTeachers);
+    }
     @PostMapping
     public ResponseEntity<Teacher> createTeacher(@RequestBody Teacher teacher) {
         Teacher createdTeacher = teacherService.createTeacher(teacher);

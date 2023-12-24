@@ -1,5 +1,6 @@
-package com.ekinci.eSchool.model.dto;
+package com.ekinci.eSchool.dto;
 
+import com.ekinci.eSchool.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,7 @@ public abstract class UserDTO{
     private String lastName;
     private String firstName;
 
-    private Set<String> authorities;
+    private Set<Role> authorities;
 
     public String getUsername() {
         return username;
@@ -40,19 +41,21 @@ public abstract class UserDTO{
         this.firstName = firstName;
     }
 
-    public Set<String> getAuthorities() {
+    public Set<Role> getAuthorities() {
         return authorities;
     }
 
-    public void setAuthorities(Set<String> authorities) {
+    public void setAuthorities(Set<Role> authorities) {
         this.authorities = authorities;
     }
 
-    public UserDTO(String username, String lastName, String firstName, Set<String> authorities) {
+    public UserDTO(String username, String lastName, String firstName
+                  // Set<Role> authorities
+    ) {
         this.username = username;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.authorities = authorities;
+     //   this.authorities = authorities;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.ekinci.eSchool.controller;
 
+import com.ekinci.eSchool.dto.StudentInfoDTO;
 import com.ekinci.eSchool.model.Student;
 import com.ekinci.eSchool.service.StudentService;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,11 @@ public class StudentController {
     @GetMapping("/search")
     public ResponseEntity<List<Student>> searchStudents(@RequestParam("keyword") String keyword){
         List<Student> foundStudents = studentService.getStudentsByKeyword(keyword);
+        return ResponseEntity.ok(foundStudents);
+    }
+@GetMapping("/search_info")
+    public ResponseEntity<List<StudentInfoDTO>> searchStudentsInfo(@RequestParam("keyword") String keyword){
+        List<StudentInfoDTO> foundStudents = studentService.getStudentsInfoByKeyword(keyword);
         return ResponseEntity.ok(foundStudents);
     }
 

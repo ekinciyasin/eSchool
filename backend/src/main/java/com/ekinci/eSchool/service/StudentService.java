@@ -1,5 +1,6 @@
 package com.ekinci.eSchool.service;
 
+import com.ekinci.eSchool.dto.StudentInfoDTO;
 import com.ekinci.eSchool.model.Student;
 import com.ekinci.eSchool.repository.StudentRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -54,5 +55,9 @@ public class StudentService {
 
     public List<Student> getStudents() {
         return studentRepository.findAll();
+    }
+
+    public List<StudentInfoDTO> getStudentsInfoByKeyword(String keyword) {
+        return studentRepository.findStudentsInfoByKeyword(keyword);
     }
 }

@@ -1,7 +1,7 @@
 package com.ekinci.eSchool.controller;
 
 import com.ekinci.eSchool.model.SchoolClass;
-import com.ekinci.eSchool.model.dto.SchoolClassDTO;
+import com.ekinci.eSchool.dto.SchoolClassDTO;
 import com.ekinci.eSchool.service.SchoolClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

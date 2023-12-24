@@ -1,5 +1,6 @@
 package com.ekinci.eSchool.service;
 
+import com.ekinci.eSchool.dto.TeacherInfoDTO;
 import com.ekinci.eSchool.model.Teacher;
 import com.ekinci.eSchool.repository.TeacherRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -50,6 +51,13 @@ public class TeacherService {
 
     public void deleteTeacher(Long teacherId) {
         teacherRepository.deleteById(teacherId);
+    }
+
+    public List<Teacher> getTeachersByKeyword(String keyword) {
+        return teacherRepository.searchTeachers(keyword);
+    }
+    public List<TeacherInfoDTO> getTeachersByKeyword2(String keyword) {
+        return teacherRepository.findTeachersByKeyword(keyword);
     }
 }
 

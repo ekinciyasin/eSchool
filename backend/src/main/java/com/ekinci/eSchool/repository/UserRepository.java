@@ -22,4 +22,5 @@ public interface UserRepository extends JpaRepository<User,Long> {
 //    List<Student> searchStudents(@Param("keyword") String keyword);
 
     Optional<User> findByUsername(String username);
+
 }
