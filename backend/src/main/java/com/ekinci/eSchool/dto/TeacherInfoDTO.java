@@ -1,7 +1,7 @@
 package com.ekinci.eSchool.dto;
 
 
-public class TeacherInfoDTO extends com.ekinci.eSchool.dto.UserDTO {
+public class TeacherInfoDTO extends UserDto {
     private String subjectTaught;
 
     public TeacherInfoDTO() {

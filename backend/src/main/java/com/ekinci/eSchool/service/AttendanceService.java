@@ -8,6 +8,7 @@ import com.ekinci.eSchool.repository.AttendanceRepository;
 import com.ekinci.eSchool.repository.SchoolClassRepository;
 import com.ekinci.eSchool.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -39,10 +40,10 @@ public class AttendanceService {
                                LocalTime lateArrival, LocalTime earlyDeparture ) {
 
         Student student = studentRepository.findById(studentId)
-                .orElseThrow(() ->new ResourceNotFoundException("Student not found with " +studentId));
+                .orElseThrow(() ->new ResourceNotFoundException("Student not found with " +studentId , HttpStatus.NOT_FOUND ));
 
         SchoolClass sClass = schoolClassRepository.findById(classId)
-                .orElseThrow(() ->new ResourceNotFoundException("Class not found with " +classId));
+                .orElseThrow(() ->new ResourceNotFoundException("Class not found with " +classId , HttpStatus.NOT_FOUND ));
 
 
             Attendance attendance = new Attendance();

@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -21,4 +23,7 @@ public class Teacher {
 
     @Column(name = "subject_taught", nullable = false)
     private String subjectTaught;
+
+    @OneToMany
+    private List<Lesson> lessons;
 }

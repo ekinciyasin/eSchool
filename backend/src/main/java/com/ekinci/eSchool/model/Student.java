@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "students")
@@ -39,6 +40,15 @@ public class Student {
 
     @Column(name = "address")
     private String address;
+
+    @ManyToMany
+    @JoinTable(
+            name = "student_lesson",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "lesson_id")
+    )
+    private List<Lesson> lessons;
+
 
 
     public String getFullName() {

@@ -1,15 +1,12 @@
 package com.ekinci.eSchool.dto;
 
 import com.ekinci.eSchool.model.Gender;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
-public class StudentInfoDTO extends UserDTO{
+public class StudentInfoDTO extends UserDto {
 
 //    @OneToOne
 //    private UserDTO userDTO;

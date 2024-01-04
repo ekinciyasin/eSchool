@@ -16,7 +16,7 @@ public class TeacherConversionService {
                 teacher.getUser().getAuthorities()
                         .stream()
                         .map(GrantedAuthority::getAuthority) // GrantedAuthority'den String'e dönüşüm
-                        .map(Role::valueOf) // String'den Role'e dönüşüm
+                        //.map(Role::valueOf) // String'den Role'e dönüşüm
                         .collect(Collectors.toSet())
         );
         teacherDTO.setFirstName(teacher.getUser().getFirstName());

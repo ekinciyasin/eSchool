@@ -1,5 +1,6 @@
 package com.ekinci.eSchool.repository;
 
+import com.ekinci.eSchool.dto.UserDto;
 import com.ekinci.eSchool.model.Student;
 import com.ekinci.eSchool.model.User;
 import io.micrometer.observation.ObservationTextPublisher;
@@ -13,14 +14,8 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
-//    @Query("SELECT s FROM Student s WHERE " +
-//            "LOWER(s.firstName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-//            "LOWER(s.lastName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-//            "LOWER(s.email) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-//            "LOWER(s.contactNumber) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-//            "LOWER(s.address) LIKE LOWER(CONCAT('%', :keyword, '%'))")
-//    List<Student> searchStudents(@Param("keyword") String keyword);
 
-    Optional<User> findByUsername(String username);
+@Query("SELECT new com.ekinci.eSchool.dto.UserDto(u.username, u.lastName, u.firstName,u.password) FROM User u WHERE u.username = :username")
+    Optional<UserDto> findByUsername(String username);
 
 }

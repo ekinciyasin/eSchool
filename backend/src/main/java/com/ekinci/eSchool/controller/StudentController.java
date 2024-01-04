@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -26,6 +27,15 @@ public class StudentController {
         Student createdStudent = studentService.createStudent(student);
        return ResponseEntity.ok(createdStudent);
     }
+
+
+
+    @GetMapping("/messages")
+    public ResponseEntity<List<String>> getMessages(){
+
+       return ResponseEntity.ok(Arrays.asList("first","second"));
+    }
+
     @GetMapping
     public ResponseEntity<List<Student>> getStudents(){
 

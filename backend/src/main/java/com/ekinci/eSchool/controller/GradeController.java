@@ -1,6 +1,6 @@
 package com.ekinci.eSchool.controller;
 
-import com.ekinci.eSchool.model.Grade;
+import com.ekinci.eSchool.model.Exam;
 
 import com.ekinci.eSchool.model.Notification;
 import com.ekinci.eSchool.service.GradeService;
@@ -22,15 +22,15 @@ public class GradeController {
     private NotificationService notificationService;
 
     @GetMapping("/students/{studentId}")
-    public ResponseEntity<List<Grade>> getGradesByStudentId(@PathVariable Long studentId) {
-        List<Grade> grades = gradeService.getGradesByStudentId(studentId);
-        return ResponseEntity.ok(grades);
+    public ResponseEntity<List<Exam>> getGradesByStudentId(@PathVariable Long studentId) {
+        List<Exam> exams = gradeService.getGradesByStudentId(studentId);
+        return ResponseEntity.ok(exams);
     }
 
     @PostMapping("/students/{studentId}")
-    public ResponseEntity<Grade> addGrade(@PathVariable Long studentId, @RequestBody Grade grade) {
-        Grade addedGrade = gradeService.addGrade(studentId, grade);
-        return ResponseEntity.ok(addedGrade);
+    public ResponseEntity<Exam> addGrade(@PathVariable Long studentId, @RequestBody Exam exam) {
+        Exam addedExam = gradeService.addGrade(studentId, exam);
+        return ResponseEntity.ok(addedExam);
     }
 
     @GetMapping("/notifications/{studentId}")
