@@ -17,7 +17,7 @@ public class UserDto {
     private String lastName;
     private String firstName;
     private String password;
-
+    private String email;
     private Set<String> authorities;
     private String token;
 
@@ -28,17 +28,20 @@ public class UserDto {
         this.password = password;
     }
 
-    public UserDto(String username, String lastName, String firstName, String password) {
-        this.username = username;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.password = password;
-    }
+//    public UserDto(String username, String lastName, String firstName, String password) {
+//        this.username = username;
+//        this.lastName = lastName;
+//        this.firstName = firstName;
+//        this.password = password;
+//
+//    }
 
-    public UserDto(String username, String lastName, String firstName) {
+    public UserDto(String username, String lastName, String firstName,String email,String password) {
         this.username = username;
         this.lastName = lastName;
         this.firstName = firstName;
+        this.email =email;
+        this.password=password;
     }
 
     public UserDto(String username, String lastName, String firstName, String password, Set<String> authorities) {
@@ -49,4 +52,10 @@ public class UserDto {
         this.authorities = authorities;
     }
 
+    public UserDto(String username, String lastName, String firstName, String email) {
+        this.username = username;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+    }
 }

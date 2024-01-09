@@ -39,7 +39,6 @@ public class TeacherRepositoryTest {
         Teacher teacher = new Teacher();
         // User nesnesini Teacher'a bağla
         teacher.setUser(user);
-        teacher.setSubjectTaught("Math");
 
         // Kullanıcı null değilse devam et
         if (teacher.getUser() != null) {
@@ -57,6 +56,6 @@ public class TeacherRepositoryTest {
         assertEquals("teacher2", foundTeacher.getUsername());
         assertEquals("Murat", foundTeacher.getFirstName());
         assertEquals("Ozturk", foundTeacher.getLastName());
-        assertEquals("Math", foundTeacher.getSubjectTaught());
+
     }
 }

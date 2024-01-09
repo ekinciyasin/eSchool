@@ -48,7 +48,7 @@ public class AttendanceService {
 
             Attendance attendance = new Attendance();
             attendance.setStudent(student);
-            attendance.setSClass(sClass);
+
             attendance.setAttendanceDate(date);
             attendance.setPresent(isPresent);
             attendance.setLateArrival(lateArrival);

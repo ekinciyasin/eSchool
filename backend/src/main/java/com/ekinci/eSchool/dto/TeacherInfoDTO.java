@@ -2,7 +2,7 @@ package com.ekinci.eSchool.dto;
 
 
 public class TeacherInfoDTO extends UserDto {
-    private String subjectTaught;
+
 
     public TeacherInfoDTO() {
 
@@ -11,19 +11,15 @@ public class TeacherInfoDTO extends UserDto {
     public TeacherInfoDTO(String username,
                           String lastName,
                           String firstName,
+                          String email
                           //Set<Role> authorities,
-                          String subjectTaught) {
-        super(username, lastName, firstName
+                       ) {
+        super(username, lastName, firstName,email
                // authorities
         );
-        this.subjectTaught = subjectTaught;
+
     }
 
-    public String getSubjectTaught() {
-        return subjectTaught;
-    }
 
-    public void setSubjectTaught(String subjectTaught) {
-        this.subjectTaught = subjectTaught;
-    }
+
 }

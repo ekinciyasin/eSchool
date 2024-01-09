@@ -41,7 +41,7 @@ public class NotificationService {
         notificationRepository.save(notification);
 
         // Add code to send the actual notification (email, push notification, etc.)
-        sendNotificationViaEmail(student.getEmail(), message);
+        sendNotificationViaEmail(student.getUser().getEmail(), message);
     }
 
     private void sendNotificationViaEmail(String toEmail, String message) {

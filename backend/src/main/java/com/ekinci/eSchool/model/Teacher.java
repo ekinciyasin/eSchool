@@ -21,9 +21,13 @@ public class Teacher {
     @OneToOne(cascade = CascadeType.PERSIST)
     private User user;
 
-    @Column(name = "subject_taught", nullable = false)
-    private String subjectTaught;
-
     @OneToMany
     private List<Lesson> lessons;
+
+    public Teacher(User user) {
+
+        this.user = user;
+    }
+
+
 }

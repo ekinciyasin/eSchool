@@ -11,26 +11,39 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
-    @Query("SELECT s FROM Student s WHERE " +
-            "LOWER(s.user.firstName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(s.user.lastName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(s.email) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(s.contactNumber) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(s.address) LIKE LOWER(CONCAT('%', :keyword, '%'))")
-    List<Student> searchStudents(@Param("keyword") String keyword);
-
     @Query("SELECT new com.ekinci.eSchool.dto.StudentInfoDTO(s.user.username, " +
             "s.user.lastName, " +
             "s.user.firstName," +
             // "t.user.authorities," +
+            "s.user.email," +
             "s.dateOfBirth," +
             "s.gender," +
-            "s.email," +
             "s.contactNumber," +
             "s.address) " +
             "FROM Student s " +
             "WHERE LOWER(s.user.firstName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
             "LOWER(s.user.lastName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(s.email) LIKE LOWER(CONCAT('%', :keyword, '%'))")
+            "LOWER(s.user.email) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<StudentInfoDTO> findStudentsInfoByKeyword(String keyword);
+
+    @Query("SELECT s FROM Student s WHERE " +
+            "LOWER(s.user.firstName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(s.user.lastName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(s.user.email) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(s.contactNumber) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(s.address) LIKE LOWER(CONCAT('%', :keyword, '%'))")
+    List<Student> searchStudents(@Param("keyword") String keyword);
+
+//    @Query(value= """
+//            select new com.ekinci.eSchool.dto.StudentLessonsOverview(
+//
+//            )
+//            from Lesson l
+//
+//            where l.students
+//
+//            """)
+//    String findStudentsByExam(@Param("studentId")String studentId);
+
+
 }

@@ -42,7 +42,7 @@ public class TeacherService {
         // Update fields based on your requirements
         existingTeacher.getUser().setFirstName(updatedTeacher.getUser().getFirstName());
         existingTeacher.getUser().setLastName(updatedTeacher.getUser().getLastName());
-        existingTeacher.setSubjectTaught(updatedTeacher.getSubjectTaught());
+
         // Update other fields...
 
         // Perform any necessary validation or business logic before saving

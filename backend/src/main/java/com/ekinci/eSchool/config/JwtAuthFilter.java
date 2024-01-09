@@ -14,6 +14,8 @@ import java.io.IOException;
 
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
+    private final static String EMPTY_SPACE=" ";
+    public static final String BEARER="Bearer";
 
     private final UserAuthenticationProvider userAuthenticationProvider;
 
@@ -28,10 +30,10 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String header = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
 
         if (header != null) {
-            String[] authElements = header.split(" ");
+            String[] authElements = header.split(EMPTY_SPACE);
 
             if (authElements.length == 2
-                    && "Bearer".equals(authElements[0])) {
+                    && BEARER.equals(authElements[0])) {
                 try {
                     SecurityContextHolder.getContext().setAuthentication(
                             userAuthenticationProvider.validateToken(authElements[1]));

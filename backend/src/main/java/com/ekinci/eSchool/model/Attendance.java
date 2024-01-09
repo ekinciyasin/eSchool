@@ -25,9 +25,9 @@ public class Attendance {
     @JoinColumn(name="student_id", nullable = false)
     private Student student;
 
-    @ManyToOne
-    @JoinColumn(name = "class_id", nullable = false)
-    private SchoolClass sClass;
+//    @ManyToOne
+//    @JoinColumn(name = "class_id", nullable = false)
+//    private SchoolClass sClass;
 
     @Column(name= "is_present", nullable = false)
     private boolean isPresent;

@@ -1,17 +1,17 @@
 package com.ekinci.eSchool.model;
 
+import com.ekinci.eSchool.util.Views;
+import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "students")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Student {
@@ -32,11 +32,11 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "email", unique = true, nullable = false)
-    private String email;
+
 
     @Column(name = "contact_number", nullable = false)
     private String contactNumber;
+
 
     @Column(name = "address")
     private String address;
@@ -47,6 +47,7 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "lesson_id")
     )
+
     private List<Lesson> lessons;
 
 
