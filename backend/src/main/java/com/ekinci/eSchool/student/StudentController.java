@@ -1,8 +1,6 @@
-package com.ekinci.eSchool.controller;
+package com.ekinci.eSchool.student;
 
 import com.ekinci.eSchool.dto.StudentInfoDTO;
-import com.ekinci.eSchool.model.Student;
-import com.ekinci.eSchool.service.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;

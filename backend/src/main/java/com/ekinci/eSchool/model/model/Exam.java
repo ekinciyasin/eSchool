@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.model.model;
 
 import com.ekinci.eSchool.util.Views;
 import com.fasterxml.jackson.annotation.JsonView;
@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "exams")

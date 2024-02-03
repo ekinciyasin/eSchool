@@ -1,9 +1,9 @@
 package com.ekinci.eSchool.config;
 
-import com.ekinci.eSchool.model.Role;
+import com.ekinci.eSchool.auth.JwtAuthFilter;
+import com.ekinci.eSchool.model.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -33,18 +33,9 @@ public class SecurityConfig{
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authz) -> {
                     authz.requestMatchers("/api/1.0/teachers/**").hasAnyRole(Role.ROLE_ADMIN.getValue(), Role.ROLE_TEACHER.getValue());
+                    authz.requestMatchers("/api/1.0/grades/**").hasAnyRole(Role.ROLE_ADMIN.getValue(), Role.ROLE_STUDENT.getValue());
                     authz.anyRequest().permitAll();});
 
-//                .formLogin((formLogin) -> formLogin
-//                        .loginPage("/authentication/login")
-//                        .failureUrl("/authentication/login?failed")
-//                        .loginProcessingUrl("/authentication/login/process")
-//                        .usernameParameter("username")
-//                        .passwordParameter("password"));
-//                .formLogin(f ->f.loginPage("/login")
-//                        .defaultSuccessUrl("/")
-//                        .failureUrl("/login?error")
-//                        .permitAll());
 
 
         return http.build();

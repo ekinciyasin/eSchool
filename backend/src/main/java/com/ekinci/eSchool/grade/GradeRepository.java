@@ -1,10 +1,8 @@
-package com.ekinci.eSchool.repository;
+package com.ekinci.eSchool.grade;
 
 
 
 import com.ekinci.eSchool.dto.GradeView.GradeViewForStudent;
-import com.ekinci.eSchool.model.Exam;
-import com.ekinci.eSchool.model.Grade;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

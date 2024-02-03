@@ -1,5 +1,6 @@
-package com.ekinci.eSchool.config;
+package com.ekinci.eSchool.auth;
 
+import com.ekinci.eSchool.config.UserAuthenticationProvider;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -29,7 +30,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             FilterChain filterChain) throws ServletException, IOException {
         String header = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
 
-        if (header != null) {
+        if (header != null && header.startsWith(BEARER)) {
             String[] authElements = header.split(EMPTY_SPACE);
 
             if (authElements.length == 2

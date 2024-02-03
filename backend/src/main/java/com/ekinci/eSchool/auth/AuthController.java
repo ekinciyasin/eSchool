@@ -1,23 +1,17 @@
-package com.ekinci.eSchool.controller;
+package com.ekinci.eSchool.auth;
 
 import com.ekinci.eSchool.config.UserAuthenticationProvider;
 import com.ekinci.eSchool.dto.CredentialsDto;
-import com.ekinci.eSchool.dto.UserDto;
-import com.ekinci.eSchool.service.UserService;
+import com.ekinci.eSchool.user.UserDto;
+import com.ekinci.eSchool.user.UserService;
 
-import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Valid;
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Set;
 
 @RequiredArgsConstructor
 @RestController

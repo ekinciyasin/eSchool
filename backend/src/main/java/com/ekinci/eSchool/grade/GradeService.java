@@ -1,10 +1,14 @@
-package com.ekinci.eSchool.service;
+package com.ekinci.eSchool.grade;
 
 import com.ekinci.eSchool.dto.GradeView.GradeViewForStudent;
-import com.ekinci.eSchool.dto.UserDto;
-import com.ekinci.eSchool.model.*;
-import com.ekinci.eSchool.repository.GradeRepository;
-import com.ekinci.eSchool.repository.UserRepository;
+import com.ekinci.eSchool.model.model.Exam;
+import com.ekinci.eSchool.model.model.Lesson;
+import com.ekinci.eSchool.student.Student;
+import com.ekinci.eSchool.service.LessonService;
+import com.ekinci.eSchool.service.NotificationService;
+import com.ekinci.eSchool.student.StudentService;
+import com.ekinci.eSchool.user.UserRepository;
+import com.ekinci.eSchool.user.User;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

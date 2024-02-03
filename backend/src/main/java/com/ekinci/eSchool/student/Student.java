@@ -1,7 +1,8 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.student;
 
-import com.ekinci.eSchool.util.Views;
-import com.fasterxml.jackson.annotation.JsonView;
+import com.ekinci.eSchool.model.model.Gender;
+import com.ekinci.eSchool.model.model.Lesson;
+import com.ekinci.eSchool.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 

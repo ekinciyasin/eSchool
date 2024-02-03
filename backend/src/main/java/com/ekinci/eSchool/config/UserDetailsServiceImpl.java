@@ -1,8 +1,8 @@
 //package com.ekinci.eSchool.config;
 //
-//import com.ekinci.eSchool.dto.UserDto;
-//import com.ekinci.eSchool.model.User;
-//import com.ekinci.eSchool.service.UserService;
+//import com.ekinci.eSchool.user.UserDto;
+//import com.ekinci.eSchool.user.User;
+//import com.ekinci.eSchool.user.UserService;
 //import jakarta.persistence.EntityNotFoundException;
 //import org.springframework.security.core.userdetails.UserDetails;
 //import org.springframework.security.core.userdetails.UserDetailsService;

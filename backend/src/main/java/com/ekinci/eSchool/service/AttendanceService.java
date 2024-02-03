@@ -1,12 +1,12 @@
 package com.ekinci.eSchool.service;
 
 import com.ekinci.eSchool.exception.ResourceNotFoundException;
-import com.ekinci.eSchool.model.Attendance;
-import com.ekinci.eSchool.model.SchoolClass;
-import com.ekinci.eSchool.model.Student;
+import com.ekinci.eSchool.model.model.Attendance;
+import com.ekinci.eSchool.model.model.SchoolClass;
+import com.ekinci.eSchool.student.Student;
 import com.ekinci.eSchool.repository.AttendanceRepository;
 import com.ekinci.eSchool.repository.SchoolClassRepository;
-import com.ekinci.eSchool.repository.StudentRepository;
+import com.ekinci.eSchool.student.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AttendanceService {

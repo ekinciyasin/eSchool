@@ -1,7 +1,5 @@
 package com.ekinci.eSchool.dto;
 
-import com.ekinci.eSchool.model.Lesson;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

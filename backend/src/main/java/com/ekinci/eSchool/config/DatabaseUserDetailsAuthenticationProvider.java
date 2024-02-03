@@ -1,7 +1,7 @@
 //package com.ekinci.eSchool.config;
 //
-//import com.ekinci.eSchool.model.User;
-//import com.ekinci.eSchool.repository.UserRepository;
+//import com.ekinci.eSchool.user.User;
+//import com.ekinci.eSchool.user.UserRepository;
 //import org.springframework.security.authentication.AuthenticationProvider;
 //import org.springframework.security.core.Authentication;
 //import org.springframework.security.core.AuthenticationException;

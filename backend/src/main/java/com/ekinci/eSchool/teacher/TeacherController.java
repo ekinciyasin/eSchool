@@ -1,8 +1,8 @@
-package com.ekinci.eSchool.controller;
+package com.ekinci.eSchool.teacher;
 
 import com.ekinci.eSchool.dto.TeacherInfoDTO;
-import com.ekinci.eSchool.model.Teacher;
-import com.ekinci.eSchool.service.TeacherService;
+import com.ekinci.eSchool.teacher.Teacher;
+import com.ekinci.eSchool.teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,15 +1,12 @@
 package com.ekinci.eSchool.controller;
 
-import com.ekinci.eSchool.model.Attendance;
+import com.ekinci.eSchool.model.model.Attendance;
 import com.ekinci.eSchool.dto.AttendanceDTO;
 import com.ekinci.eSchool.service.AttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController

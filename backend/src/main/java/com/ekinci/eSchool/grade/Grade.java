@@ -1,7 +1,8 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.grade;
 
+import com.ekinci.eSchool.model.model.Exam;
+import com.ekinci.eSchool.student.Student;
 import com.ekinci.eSchool.util.Views;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 import lombok.Getter;

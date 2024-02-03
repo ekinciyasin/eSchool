@@ -1,5 +1,6 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.model.model;
 
+import com.ekinci.eSchool.teacher.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 

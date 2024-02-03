@@ -1,10 +1,9 @@
 package com.ekinci.eSchool.repository;
 
-import com.ekinci.eSchool.model.Attendance;
+import com.ekinci.eSchool.model.model.Attendance;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Repository

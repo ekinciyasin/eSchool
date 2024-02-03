@@ -1,5 +1,7 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.teacher;
 
+import com.ekinci.eSchool.model.model.Lesson;
+import com.ekinci.eSchool.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

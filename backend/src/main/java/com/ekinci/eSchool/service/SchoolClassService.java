@@ -1,16 +1,15 @@
 package com.ekinci.eSchool.service;
 
 import com.ekinci.eSchool.exception.ResourceNotFoundException;
-import com.ekinci.eSchool.model.SchoolClass;
-import com.ekinci.eSchool.model.Teacher;
+import com.ekinci.eSchool.model.model.SchoolClass;
+import com.ekinci.eSchool.teacher.Teacher;
 import com.ekinci.eSchool.repository.SchoolClassRepository;
-import com.ekinci.eSchool.repository.TeacherRepository;
+import com.ekinci.eSchool.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SchoolClassService {

@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.config;
+package com.ekinci.eSchool.auth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

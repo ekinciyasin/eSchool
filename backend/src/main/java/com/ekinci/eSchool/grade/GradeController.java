@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.controller;
+package com.ekinci.eSchool.grade;
 
 import com.ekinci.eSchool.dto.GradeView.GradeViewForStudent;
 import com.ekinci.eSchool.model.model.Exam;

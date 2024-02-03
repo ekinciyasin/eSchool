@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  Modal,
-  Button,
-  Form,
-  Alert,
-  InputGroup,
-  FormGroup,
-} from "react-bootstrap";
+import { Modal, Button, Form, Alert } from "react-bootstrap";
 import { request, setAuthHeader } from "../../services/axios_helper";
 import { useUser } from "../../context/UserContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
 import Input from "./components/Input";
 
 const LoginModal = ({ show, onHide }) => {

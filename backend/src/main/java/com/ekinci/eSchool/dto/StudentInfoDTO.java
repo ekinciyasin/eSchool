@@ -1,6 +1,7 @@
 package com.ekinci.eSchool.dto;
 
-import com.ekinci.eSchool.model.Gender;
+import com.ekinci.eSchool.model.model.Gender;
+import com.ekinci.eSchool.user.UserDto;
 import lombok.Data;
 
 import java.time.LocalDate;

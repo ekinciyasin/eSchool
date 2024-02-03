@@ -1,5 +1,6 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.model.model;
 
+import com.ekinci.eSchool.student.Student;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

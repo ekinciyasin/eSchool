@@ -11,7 +11,7 @@ const Input = ({ id, labelName, type, onChange, error, value }) => {
   return (
     <FormGroup className="mt-2">
       <Form.Label>{labelName}</Form.Label>
-      <InputGroup controlId={id}>
+      <InputGroup controlid={id}>
         {type === "password" ? (
           <Form.Control
             type={showPassword ? "text" : "password"}

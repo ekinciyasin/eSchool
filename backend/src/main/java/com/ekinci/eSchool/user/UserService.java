@@ -1,11 +1,7 @@
-package com.ekinci.eSchool.service;
+package com.ekinci.eSchool.user;
 
 import com.ekinci.eSchool.dto.CredentialsDto;
-import com.ekinci.eSchool.dto.UserDto;
 import com.ekinci.eSchool.exception.ResourceNotFoundException;
-import com.ekinci.eSchool.mapper.UserMapper;
-import com.ekinci.eSchool.model.User;
-import com.ekinci.eSchool.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

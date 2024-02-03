@@ -1,7 +1,7 @@
 package com.ekinci.eSchool.repository;
 
 import com.ekinci.eSchool.dto.StudentLessonsOverview;
-import com.ekinci.eSchool.model.Lesson;
+import com.ekinci.eSchool.model.model.Lesson;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -17,4 +17,6 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
             WHERE s.id = :studentId
             """)
     List<StudentLessonsOverview> findLessonsByStudentId(@Param("studentId") Long studentId);
+
+    List<Lesson> findByStudents_Id(Long StudentId);
 }

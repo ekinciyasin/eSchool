@@ -1,8 +1,8 @@
 package com.ekinci.eSchool.dto.GradeView;
 
 import com.ekinci.eSchool.dto.ExamDto;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -18,6 +18,10 @@ public class GradeViewForStudent {
     private LessonDto lesson;
     private ExamDto exam;
 
+
+    public GradeViewForStudent() {
+        this.lesson = new LessonDto();
+    }
 
     public GradeViewForStudent(long gradeId, int gradeValue, StudentDto student, LessonDto lesson, ExamDto exam) {
         this.gradeId = gradeId;

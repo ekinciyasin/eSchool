@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.model;
+package com.ekinci.eSchool.model.model;
 
 
 import lombok.AllArgsConstructor;

@@ -1,9 +1,11 @@
 package com.ekinci.eSchool.repository;
 
 import com.ekinci.eSchool.dto.TeacherInfoDTO;
-import com.ekinci.eSchool.model.Role;
-import com.ekinci.eSchool.model.Teacher;
-import com.ekinci.eSchool.model.User;
+import com.ekinci.eSchool.model.model.Role;
+import com.ekinci.eSchool.teacher.Teacher;
+import com.ekinci.eSchool.teacher.TeacherRepository;
+import com.ekinci.eSchool.user.User;
+import com.ekinci.eSchool.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -31,7 +33,7 @@ public class TeacherRepositoryTest {
         user.setFirstName("Murat");
         user.setLastName("Ozturk");
         user.setPassword("password");
-        user.setAuthorities(Set.of(Role.ROLE_TEACHER));
+        user.setRoles(Set.of(Role.ROLE_TEACHER));
 
         // User'ı veritabanına ekleyerek yönetilmiş hale getir
         userRepository.save(user);

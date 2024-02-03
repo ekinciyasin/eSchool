@@ -1,7 +1,6 @@
-package com.ekinci.eSchool.repository;
+package com.ekinci.eSchool.student;
 
 import com.ekinci.eSchool.dto.StudentInfoDTO;
-import com.ekinci.eSchool.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

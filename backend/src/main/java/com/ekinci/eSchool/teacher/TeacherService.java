@@ -1,8 +1,6 @@
-package com.ekinci.eSchool.service;
+package com.ekinci.eSchool.teacher;
 
 import com.ekinci.eSchool.dto.TeacherInfoDTO;
-import com.ekinci.eSchool.model.Teacher;
-import com.ekinci.eSchool.repository.TeacherRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

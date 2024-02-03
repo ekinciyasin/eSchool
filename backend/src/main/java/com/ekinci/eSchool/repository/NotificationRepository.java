@@ -1,6 +1,6 @@
 package com.ekinci.eSchool.repository;
 
-import com.ekinci.eSchool.model.Notification;
+import com.ekinci.eSchool.model.model.Notification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

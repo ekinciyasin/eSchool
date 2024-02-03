@@ -1,9 +1,8 @@
 package com.ekinci.eSchool.repository;
 
-import com.ekinci.eSchool.model.Exam;
+import com.ekinci.eSchool.model.model.Exam;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 

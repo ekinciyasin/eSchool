@@ -1,11 +1,9 @@
-package com.ekinci.eSchool.dto;
+package com.ekinci.eSchool.user;
 
-import com.ekinci.eSchool.model.Role;
+import com.ekinci.eSchool.model.model.Role;
 import lombok.*;
 
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @NoArgsConstructor
 @AllArgsConstructor

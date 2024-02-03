@@ -1,6 +1,8 @@
 package com.ekinci.eSchool.dto;
 
 
+import com.ekinci.eSchool.user.UserDto;
+
 public class TeacherInfoDTO extends UserDto {
 
 

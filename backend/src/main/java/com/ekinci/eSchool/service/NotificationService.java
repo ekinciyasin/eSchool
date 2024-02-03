@@ -1,8 +1,9 @@
 package com.ekinci.eSchool.service;
 
-import com.ekinci.eSchool.model.Notification;
-import com.ekinci.eSchool.model.Student;
+import com.ekinci.eSchool.model.model.Notification;
+import com.ekinci.eSchool.student.Student;
 import com.ekinci.eSchool.repository.NotificationRepository;
+import com.ekinci.eSchool.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
