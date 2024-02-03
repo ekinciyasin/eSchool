@@ -1,0 +1,16 @@
+.grades-container {
+  display: flex;
+}
+
+.grade-item {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.vertical-line {
+  height: 15px;
+  width: 1px;
+  background-color: #000;
+  margin: 0 5px;
+}

@@ -15,7 +15,8 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 
-@Query("SELECT new com.ekinci.eSchool.dto.UserDto(u.username, u.lastName, u.firstName,u.email, u.password) FROM User u WHERE u.username = :username")
-    Optional<UserDto> findByUsername(String username);
+@Query("SELECT new com.ekinci.eSchool.dto.UserDto(u.username, u.lastName, u.firstName,u.email, u.password,u.roles) FROM User u WHERE u.username = :username")
+    Optional<UserDto> findByUsernameWithQuery(String username);
 
+  User findByUsername(String username);
 }

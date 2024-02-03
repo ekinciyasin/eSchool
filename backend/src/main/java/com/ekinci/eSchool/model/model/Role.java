@@ -1,7 +1,11 @@
 package com.ekinci.eSchool.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+
+
 
 public enum Role implements GrantedAuthority {
     ROLE_TEACHER("TEACHER"),

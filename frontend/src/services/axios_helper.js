@@ -24,3 +24,7 @@ export const request = (method, url, data) => {
     data: data,
   });
 };
+
+export const getStudentGrades = () => {
+  return request("GET", "/api/1.0/grades/my-grades");
+};

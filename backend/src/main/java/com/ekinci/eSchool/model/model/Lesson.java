@@ -27,7 +27,6 @@ public class Lesson {
     private Teacher teacher;
 
     @ManyToMany(mappedBy = "lessons")
-
     private List<Student> students;
 
 

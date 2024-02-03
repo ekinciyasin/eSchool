@@ -8,9 +8,7 @@ body {
 }
 
 .header {
-  position: relative;
   height: 20vh;
-  /* background: url("background-image.jpg") center/cover no-repeat; */
   color: #fff;
   display: flex;
   flex-direction: column;

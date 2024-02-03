@@ -34,6 +34,8 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
             "LOWER(s.address) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<Student> searchStudents(@Param("keyword") String keyword);
 
+    Student findByUserId(Long userId);
+
 //    @Query(value= """
 //            select new com.ekinci.eSchool.dto.StudentLessonsOverview(
 //

@@ -1,16 +1,16 @@
 package com.ekinci.eSchool.dto;
 
 import com.ekinci.eSchool.model.Role;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
 @Builder
 public class UserDto {
     private String username;
@@ -18,8 +18,9 @@ public class UserDto {
     private String firstName;
     private String password;
     private String email;
-    private Set<String> authorities;
+    private Set<Role> roles;
     private String token;
+
 
 
 
@@ -44,12 +45,30 @@ public class UserDto {
         this.password=password;
     }
 
-    public UserDto(String username, String lastName, String firstName, String password, Set<String> authorities) {
+    public UserDto(String username, String lastName, String firstName, String password, String email, Set<Role> roles) {
         this.username = username;
         this.lastName = lastName;
         this.firstName = firstName;
         this.password = password;
-        this.authorities = authorities;
+        this.email = email;
+        this.roles = roles;
+    }
+//    public UserDto(String username, String lastName, String firstName, String password, String email, Set<String> roles) {
+//        this.username = username;
+//        this.lastName = lastName;
+//        this.firstName = firstName;
+//        this.password = password;
+//        this.email = email;
+//        this.roles = roles.stream().map(Role::valueOf).collect(Collectors.toSet());
+//    }
+
+
+    public UserDto(String username, String lastName, String firstName, String password, Set<Role> roles) {
+        this.username = username;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.password = password;
+        this.roles = roles;
     }
 
     public UserDto(String username, String lastName, String firstName, String email) {
@@ -58,4 +77,5 @@ public class UserDto {
         this.firstName = firstName;
         this.email = email;
     }
+
 }

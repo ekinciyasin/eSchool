@@ -4,6 +4,7 @@ import { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 
 export const useUser = () => {
+  console.log(useContext(UserContext));
   return useContext(UserContext);
 };
 
@@ -13,6 +14,7 @@ export const UserProvider = ({ children }) => {
 
   const loginUser = (userData) => {
     setUser(userData);
+    console.log(userData);
     setIsLoggedIn(true);
   };
 

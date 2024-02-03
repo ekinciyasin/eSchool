@@ -60,4 +60,8 @@ public class StudentService {
     public List<StudentInfoDTO> getStudentsInfoByKeyword(String keyword) {
         return studentRepository.findStudentsInfoByKeyword(keyword);
     }
+
+    public Student getStudentByUserId(Long userId) {
+        return studentRepository.findByUserId(userId);
+    }
 }

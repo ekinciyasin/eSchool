@@ -2,17 +2,26 @@ import React, { useState } from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import "./HeaderMenu.css"; // Import your styles
-import LoginModal from "./LoginModal";
+import LoginModal from "../pages/Login/index";
 import Form from "react-bootstrap/Form";
 import logo from "../assets/images/logo.jpeg";
 import { useUser } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function HeaderMenu() {
+  const navigate = useNavigate();
   const [showLoginModal, setShowLoginModal] = useState(false);
   const { user, isLoggedIn, logoutUser } = useUser();
 
   const handleLoginButtonClick = () => {
     setShowLoginModal(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+    logoutUser();
+    localStorage.clear();
   };
 
   return (
@@ -54,7 +63,7 @@ function HeaderMenu() {
                   <Button
                     className="ms-3"
                     variant="secondary"
-                    onClick={logoutUser}
+                    onClick={handleLogout}
                   >
                     Logout
                   </Button>

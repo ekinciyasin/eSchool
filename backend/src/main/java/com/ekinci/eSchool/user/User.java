@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -42,11 +43,15 @@ public class User implements UserDetails {
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name ="role", nullable = false)
     @Enumerated(value = EnumType.STRING)
-    private Set<Role> authorities;
+    private Set<Role> roles;
+
+    public Collection<? extends GrantedAuthority> getRoles() {
+        return roles;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+        return roles;
     }
 
     @Override
