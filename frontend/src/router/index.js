@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import App from "../App";
 import GradeTableForStudent from "../pages/student/GradeTableForStudent";
 import PrivateRoute from "./PrivateRoute";
+import AttendanceScreen from "../pages/student/AttendanceScreen";
 
 export default createBrowserRouter([
   {
@@ -19,6 +20,14 @@ export default createBrowserRouter([
         element: (
           <PrivateRoute allowedRoles={["ROLE_STUDENT"]}>
             <GradeTableForStudent />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/attendance",
+        element: (
+          <PrivateRoute allowedRoles={["ROLE_STUDENT"]}>
+            <AttendanceScreen />
           </PrivateRoute>
         ),
       },

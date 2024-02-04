@@ -55,7 +55,7 @@ public class GradeService {
         User user = userRepository.findByUsername(authenticatedUsername);
         Student studentByUserId = studentService.getStudentByUserId(user.getId());
         List<Lesson> lessonsByStudentId = lessonService.getLessonsByStudent(studentByUserId);
-        lessonsByStudentId.forEach(lesson -> System.out.println("Lesson Name: " + lesson.getName()));
+//        lessonsByStudentId.forEach(lesson -> System.out.println("Lesson Name: " + lesson.getName()));
         List<GradeViewForStudent> gradesByStudentId = getGradesByStudentIdWithProjection(studentByUserId.getId());
         return mergeGradesAndLessons(gradesByStudentId,lessonsByStudentId);
 

@@ -1,8 +1,8 @@
 package com.ekinci.eSchool.dto.GradeView;
 
 import com.ekinci.eSchool.dto.ExamDto;
+import com.ekinci.eSchool.student.StudentDto;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;

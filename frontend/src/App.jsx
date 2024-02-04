@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./App.css";
-import HeaderMenu from "./components/HeaderMenu";
+import Navbar from "./components/HeaderMenu";
 import { useUser } from "./context/UserContext";
 import StudentTools from "./pages/student/components/StudentTools";
 import { Outlet, useLocation } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="app">
-      <HeaderMenu />
+      <Navbar />
       {!isLoggedIn && isHomePage && <Header />}
       {user?.roles.includes("ROLE_STUDENT") && isHomePage && <StudentTools />}
       <Outlet />

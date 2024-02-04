@@ -18,7 +18,7 @@ public interface GradeRepository extends JpaRepository<Grade, Long> {
             SELECT new com.ekinci.eSchool.dto.GradeView.GradeViewForStudent(
             g.id,
             g.gradeValue,
-            new com.ekinci.eSchool.dto.GradeView.StudentDto(s.id, s.firstName, s.lastName),
+            new com.ekinci.eSchool.student.StudentDto(s.id, s.firstName, s.lastName),
             new com.ekinci.eSchool.dto.GradeView.LessonDto(l.id, l.name),
             new com.ekinci.eSchool.dto.ExamDto(e.id, e.name, e.localDate)
             )

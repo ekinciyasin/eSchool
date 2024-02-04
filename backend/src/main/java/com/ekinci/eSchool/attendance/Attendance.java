@@ -1,5 +1,6 @@
-package com.ekinci.eSchool.model.model;
+package com.ekinci.eSchool.attendance;
 
+import com.ekinci.eSchool.model.model.Lesson;
 import com.ekinci.eSchool.student.Student;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,12 +27,14 @@ public class Attendance {
     @JoinColumn(name="student_id", nullable = false)
     private Student student;
 
-//    @ManyToOne
-//    @JoinColumn(name = "class_id", nullable = false)
-//    private SchoolClass sClass;
+    @ManyToOne
+    private Lesson lesson;
 
     @Column(name= "is_present", nullable = false)
     private boolean isPresent;
+
+    @Column(name= "is_excused")
+    private boolean isExcused;
 
     @Column(name = "attendance_date", nullable = false)
     private LocalDate attendanceDate;

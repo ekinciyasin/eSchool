@@ -28,3 +28,7 @@ export const request = (method, url, data) => {
 export const getStudentGrades = () => {
   return request("GET", "/api/1.0/grades/my-grades");
 };
+
+export const getStudentAttendance = () => {
+  return request("GET", "/api/1.0/attendance/my-attendance");
+};

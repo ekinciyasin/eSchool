@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const ClickableCard = ({ title, description, onClick }) => {
+const ClickableCard = ({ title, description, link }) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardStyle = {
     cursor: "pointer",
@@ -20,12 +20,11 @@ const ClickableCard = ({ title, description, onClick }) => {
 
   return (
     <Col>
-      <Link to="/grades" style={{ textDecoration: "none" }}>
+      <Link to={link} style={{ textDecoration: "none" }}>
         <Card
           bg="secondary"
           className="mb-2 clickable-card"
           style={{ ...cardStyle }}
-          onClick={onClick}
           onMouseOver={() => setIsHovered(true)}
           onMouseOut={() => setIsHovered(false)}
         >

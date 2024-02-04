@@ -1,4 +1,4 @@
-package com.ekinci.eSchool.dto.GradeView;
+package com.ekinci.eSchool.student;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

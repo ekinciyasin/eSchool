@@ -1,10 +1,10 @@
-package com.ekinci.eSchool.controller;
+package com.ekinci.eSchool.attendance;
 
-import com.ekinci.eSchool.model.model.Attendance;
 import com.ekinci.eSchool.dto.AttendanceDTO;
-import com.ekinci.eSchool.service.AttendanceService;
+import com.ekinci.eSchool.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,13 +16,31 @@ public class AttendanceController {
     @Autowired
     private AttendanceService attendanceService;
 
-//    @GetMapping("/class/{classId}/date/{date}")
-//    public ResponseEntity<List<Attendance>> getAttendancesByClassAndDate(
-//            @PathVariable Long classId, @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-//        List<Attendance> attendances = attendanceService.getAttendancesByClassAndDate(classId, date);
-//        return ResponseEntity.ok(attendances);
-//    }
-@GetMapping("/{studentId}")
+    @Autowired
+    private SecurityService securityService;
+
+    @GetMapping("/my-attendance")
+    public ResponseEntity<?> getAttendancesByStudent(){
+        String username = null;
+        try {
+            username = securityService.getUsernameFromPrincipal();
+
+            System.out.println("Kullanıcı adı: " + username);
+            List<AttendanceViewForStudent> attendenceByUsername = attendanceService.getAttendancesByStudentId(username);
+            return ResponseEntity.ok(attendenceByUsername);
+
+        } catch (UsernameNotFoundException ex) {
+            System.err.println("Hata: Kullanıcı adı alınamadı. " + ex.getMessage());
+
+        }
+
+
+        return ResponseEntity.ok("error");
+
+    }
+
+
+    @GetMapping("/{studentId}")
     public ResponseEntity<List<Attendance>> getAttendancesByStudentId(
             @PathVariable Long studentId) {
         List<Attendance> attendances = attendanceService.getAttendancesByStudentId(studentId);

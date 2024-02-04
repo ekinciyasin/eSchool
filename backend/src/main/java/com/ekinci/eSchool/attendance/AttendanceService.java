@@ -1,13 +1,11 @@
-package com.ekinci.eSchool.service;
+package com.ekinci.eSchool.attendance;
 
 import com.ekinci.eSchool.exception.ResourceNotFoundException;
-import com.ekinci.eSchool.model.model.Attendance;
-import com.ekinci.eSchool.model.model.SchoolClass;
 import com.ekinci.eSchool.student.Student;
-import com.ekinci.eSchool.repository.AttendanceRepository;
-import com.ekinci.eSchool.repository.SchoolClassRepository;
 import com.ekinci.eSchool.student.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ekinci.eSchool.student.StudentService;
+import com.ekinci.eSchool.user.User;
+import com.ekinci.eSchool.user.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +15,19 @@ import java.util.List;
 
 @Service
 public class AttendanceService {
-
-    @Autowired
     private AttendanceRepository attendanceRepository;
-
-    @Autowired
     private StudentRepository studentRepository;
+    private StudentService studentService;
+    private UserRepository userRepository;
 
-    @Autowired
-    private SchoolClassRepository schoolClassRepository;
+    public AttendanceService(AttendanceRepository attendanceRepository, StudentRepository studentRepository, StudentService studentService, UserRepository userRepository) {
+        this.attendanceRepository = attendanceRepository;
+        this.studentRepository = studentRepository;
+        this.studentService = studentService;
+        this.userRepository = userRepository;
+    }
 
-//    public List<Attendance> getAttendancesByClassAndDate(Long classId, LocalDate date){
+    //    public List<Attendance> getAttendancesByClassAndDate(Long classId, LocalDate date){
 //        return attendanceRepository.findBySClassIdAndAttendanceDate(classId,date);
 //    }
     public List<Attendance> getAttendancesByStudentId(Long Id){
@@ -41,8 +41,6 @@ public class AttendanceService {
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(() ->new ResourceNotFoundException("Student not found with " +studentId , HttpStatus.NOT_FOUND ));
 
-        SchoolClass sClass = schoolClassRepository.findById(classId)
-                .orElseThrow(() ->new ResourceNotFoundException("Class not found with " +classId , HttpStatus.NOT_FOUND ));
 
 
             Attendance attendance = new Attendance();
@@ -56,5 +54,11 @@ public class AttendanceService {
 
 
 
+    }
+
+    public List<AttendanceViewForStudent> getAttendancesByStudentId(String authenticatedUsername) {
+        User user = userRepository.findByUsername(authenticatedUsername);
+        Student studentByUserId = studentService.getStudentByUserId(user.getId());
+        return attendanceRepository.getAttendancesByStudentWithProjection(studentByUserId.getId());
     }
 }

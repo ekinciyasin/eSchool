@@ -26,6 +26,7 @@ function StudentTools() {
           description={
             "The 'My Grade' section offers students a quick summary of their academic performance, including grades and assessments in various courses."
           }
+          link="/grades"
           // onClick={handleMyGradesClick}
         />
 
@@ -34,6 +35,7 @@ function StudentTools() {
           description={
             "Track your attendance effortlessly with the Attendance Status feature. Monitor your class presence and stay informed about your academic engagement."
           }
+          link="/attendance"
         />
         <ClickableCard
           title={"Lesson Program"}
